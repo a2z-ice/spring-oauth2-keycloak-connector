@@ -8,3 +8,7 @@ https://medium.com/@bcarunmail/securing-rest-api-using-keycloak-and-spring-oauth
 To continue reading on how to Access a Secure REST API using Spring OAuth2RestTemplate, refer below article
 
 https://medium.com/@bcarunmail/accessing-secure-rest-api-using-spring-oauth2resttemplate-ef18377e2e05
+
+
+
+docker run -p 8080:8080 --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e DB_VENDOR=mysql -e DB_ADDR=192.168.0.101 -e DB_PORT=53306 -e DB_USER=root -e DB_PASSWORD=root_password -e JDBC_PARAMS='useSSL=false' jboss/keycloak
