@@ -3,7 +3,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'password' WITH GRANT OPT
 
 SELECT User, Host FROM mysql.user
  
- cd /etc/my.cnf.d/server.cnf
+ sudo vi /etc/my.cnf.d/server.cnf
  bind-address=0.0.0.0
  skip-networking=0
  
