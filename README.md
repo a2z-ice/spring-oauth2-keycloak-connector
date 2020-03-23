@@ -1,5 +1,6 @@
 <pre><code>
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'password' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
 
 SELECT User, Host FROM mysql.user
  
