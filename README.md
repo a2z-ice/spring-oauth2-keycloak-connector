@@ -1,3 +1,20 @@
+<pre><code>
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'password' WITH GRANT OPTION;
+
+SELECT User, Host FROM mysql.user
+ 
+ cd /etc/my.cnf.d/server.cnf
+ bind-address=0.0.0.0
+ skip-networking=0
+ 
+sudo /etc/init.d/mysql restart
+ 
+sudo firewall-cmd --add-port=3306/tcp
+sudo firewall-cmd --permanent --add-port=3306/tcp
+  
+</code></pre>
+
+
 # spring-oauth2-keycloak-connector (Source code for Article published)
 
 Complete source code used to explain an article on Securing REST API using Keycloak and Spring Oauth2   
