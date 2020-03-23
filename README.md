@@ -2,13 +2,14 @@
 mysql -u root -p
 
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'password' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
+MariaDB [(none)]> FLUSH PRIVILEGES;
 
-SELECT User, Host FROM mysql.user
- 
- sudo vi /etc/my.cnf.d/server.cnf
- bind-address=0.0.0.0
- skip-networking=0
+MariaDB [(none)]> SELECT User, Host FROM mysql.user;
+exit; 
+
+sudo vi /etc/my.cnf.d/server.cnf
+bind-address=0.0.0.0
+skip-networking=0
  
 sudo /etc/init.d/mysql restart
  
