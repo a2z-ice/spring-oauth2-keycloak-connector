@@ -11,6 +11,15 @@ https://medium.com/@bcarunmail/accessing-secure-rest-api-using-spring-oauth2rest
 
 
 <pre><code>
+====================>mariadb<====================
+docker run -d --name mariadb --net keycloak-network -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=keycloak -e MYSQL_USER=keycloak -e MYSQL_PASSWORD=password -p 3306:3306 mariadb
+
+====================>keycloak mariadb<====================
+docker run -p 8080:8080 --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e DB_VENDOR=mariadb -e DB_ADDR=192.168.0.101 -e DB_PORT=3306 -e DB_USER=root -e DB_PASSWORD=password -e JDBC_PARAMS='useSSL=false' jboss/keycloak
+
+
+docker run -p 8080:8080 --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e DB_VENDOR=mariadb -e DB_ADDR=192.168.0.101 -e DB_PORT=3306 -e DB_USER=keycloak -e DB_PASSWORD=password -e JDBC_PARAMS='useSSL=false' jboss/keycloak
+================>Keycloak MySQL<==============
 docker run -p 8080:8080 --name keycloak -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin -e DB_VENDOR=mysql -e DB_ADDR=192.168.0.101 -e DB_PORT=53306 -e DB_USER=root -e DB_PASSWORD=root_password -e JDBC_PARAMS='useSSL=false' jboss/keycloak
 
 #--------------Following docker compose not yet tested and completed------
