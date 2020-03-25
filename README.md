@@ -1,4 +1,13 @@
 <pre><code>
+
+hake to disable TLS
+
+docker exec -it {contaierID} bash
+cd keycloak/bin
+./kcadm.sh config credentials --server http://localhost:8080/auth --realm master --user admin
+./kcadm.sh update realms/master -s sslRequired=NONE
+
+
 mysql -u root -p
 
 MariaDB [(none)]> GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY 'password' WITH GRANT OPTION;
