@@ -1,5 +1,7 @@
 <pre><code>
 
+Run keycloak as a CentOS 7 Service : https://www.pimwiddershoven.nl/entry/install-keycloak-on-centos-7-with-mysql-backend
+
 nginx proxy configuration for keycloak:
 
 ---------------------/etc/nginx/config.d/ssl.config-----------
