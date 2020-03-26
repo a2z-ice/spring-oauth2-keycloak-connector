@@ -1,5 +1,57 @@
 <pre><code>
 
+nginx proxy configuration for keycloak:
+
+---------------------/etc/nginx/config.d/ssl.config-----------
+
+server {
+    listen 7000 http2 ssl;
+    listen [::]:7000 http2 ssl;
+
+    server_name assad.keycloak.com;
+   
+    ssl_certificate /etc/ssl/assad.keycloak.com.pem;
+    ssl_certificate_key /etc/ssl/assad.keycloak.com.key;
+    ssl_password_file /etc/ssh/passphrase.pass; #passphrase file which contain passphrash password
+    
+    location / {
+      proxy_pass http://127.0.0.1:8080;
+      proxy_set_header	Host			$host;
+      proxy_set_header	X-Real-IP		$remote_addr;
+      proxy_set_header	X-Forwarded-For		$proxy_add_x_forwarded_for;
+      proxy_set_header	X-Forwarded-Host	$host;
+      proxy_set_header	X-Forwarded-Server	$host;
+      proxy_set_header	X-Forwarded-Port	$server_port;
+      proxy_set_header	X-Forwarded-Proto	$scheme;
+    }
+
+    error_page 404 /404.html;
+        location = /40x.html {
+    }
+
+    error_page 500 502 503 504 /50x.html;
+        location = /50x.html {
+    }
+}
+
+---------------------------------------------------------------
+
+-----------------------/standalone/configuration/standalone.xml-------------
+<http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true" proxy-address-forwarding="true"/> <------Add proxy-address-forwarding="true"
+                <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/> <------Add proxy-address-forwarding="true"
+                
+                
+
+ <interface name="management">
+     <inet-address value="${jboss.bind.address.management:0.0.0.0}"/> <--------Add 0.0.0.0 instead of 127.0.0.1
+ </interface>
+ <interface name="public">
+     <inet-address value="${jboss.bind.address:0.0.0.0}"/>  <--------Add 0.0.0.0 instead of 127.0.0.1
+ </interface>                
+
+----------------------------------------------------------------------------
+
+
 hake to disable TLS
 
 docker exec -it {contaierID} bash
