@@ -35,8 +35,9 @@ server {
 }
 
 ---------------------------------------------------------------
-
------------------------/standalone/configuration/standalone.xml-------------
+-----------------------keycloak/standalone/configuration/standalone.xml-------------
+```xml
+<myxml>
 <http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true" proxy-address-forwarding="true"/> <------Add proxy-address-forwarding="true"
                 <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/> <------Add proxy-address-forwarding="true"
                 
@@ -47,7 +48,11 @@ server {
  </interface>
  <interface name="public">
      <inet-address value="${jboss.bind.address:0.0.0.0}"/>  <--------Add 0.0.0.0 instead of 127.0.0.1
- </interface>                
+ </interface> 
+     </myxml>
+```
+
+               
 
 ----------------------------------------------------------------------------
 
