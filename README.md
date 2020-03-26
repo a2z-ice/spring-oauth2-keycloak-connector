@@ -36,21 +36,18 @@ server {
 
 ---------------------------------------------------------------
 -----------------------keycloak/standalone/configuration/standalone.xml-------------
-```xml
-<myxml>
-<http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true" proxy-address-forwarding="true"/> <------Add proxy-address-forwarding="true"
-                <https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/> <------Add proxy-address-forwarding="true"
+&lt;http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
+                &lt;https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
                 
                 
 
- <interface name="management">
-     <inet-address value="${jboss.bind.address.management:0.0.0.0}"/> <--------Add 0.0.0.0 instead of 127.0.0.1
- </interface>
- <interface name="public">
-     <inet-address value="${jboss.bind.address:0.0.0.0}"/>  <--------Add 0.0.0.0 instead of 127.0.0.1
- </interface> 
-     </myxml>
-```
+ &lt;interface name="management"&gt;
+     &lt;inet-address value="${jboss.bind.address.management:0.0.0.0}"/&gt; &lt;--------Add 0.0.0.0 instead of 127.0.0.1
+ &lt;/interface&gt;
+ &lt;interface name="public"&gt;
+     &lt;inet-address value="${jboss.bind.address:0.0.0.0}"/&gt;  &lt;--------Add 0.0.0.0 instead of 127.0.0.1
+ &lt;/interface&gt; 
+
 
                
 
