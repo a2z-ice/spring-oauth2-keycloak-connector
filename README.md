@@ -37,7 +37,7 @@ server {
 ---------------------------------------------------------------
 -----------------------keycloak/standalone/configuration/standalone.xml-------------
 &lt;http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
-                &lt;https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
+&lt;https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
                 
                 
 
