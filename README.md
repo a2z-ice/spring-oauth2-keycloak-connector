@@ -4,10 +4,11 @@ About keycloak user permission:
 
 https://osc.github.io/ood-documentation/master/authentication/tutorial-oidc-keycloak-rhel7/install-keycloak.html
 Above line content save in googlesheet a2z.ice help/Keycloak Installation wiht nginx and keycloak user permission
+
 Run as linux service:
 ---------------------------
 
-sudo cat > /etc/systemd/system/keycloak.service <<EOF
+sudo vi /etc/systemd/system/keycloak.service
 
 [Unit]
 Description=Jboss Application Server
@@ -25,7 +26,7 @@ TimeoutStopSec=600
 
 [Install]
 WantedBy=multi-user.target
-EOF
+
 ---------------------------
 
 Run keycloak as a CentOS 7 Service : https://www.pimwiddershoven.nl/entry/install-keycloak-on-centos-7-with-mysql-backend
