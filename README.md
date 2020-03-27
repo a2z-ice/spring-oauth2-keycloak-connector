@@ -11,7 +11,7 @@ Run as linux service:
 sudo vi /etc/systemd/system/keycloak.service
 
 [Unit]
-Description=Jboss Application Server
+Description=Jboss Application Server For Keycloak
 After=network.target
 
 [Service]
