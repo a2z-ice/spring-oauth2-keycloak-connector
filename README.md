@@ -1,4 +1,10 @@
 <pre><code>
+
+Installed JDK location in CentOS 7
+readlink -f $(which java)
+or
+update-alternatives --config java
+
 Export keysotre:
 openssl s_client -connect sonarqube-at.remote.server:443 | openssl x509 -out sonar_ssl.cert
 
