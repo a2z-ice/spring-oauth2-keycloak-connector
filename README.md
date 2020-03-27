@@ -1,5 +1,33 @@
 <pre><code>
 
+About keycloak user permission:
+
+https://osc.github.io/ood-documentation/master/authentication/tutorial-oidc-keycloak-rhel7/install-keycloak.html
+
+Run as linux service:
+---------------------------
+
+sudo cat > /etc/systemd/system/keycloak.service <<EOF
+
+[Unit]
+Description=Jboss Application Server
+After=network.target
+
+[Service]
+Type=idle
+User=keycloak
+Group=keycloak
+ExecStart=/opt/keycloak/bin/standalone.sh
+ExecStop=/opt/keycloak/bin/jboss-cli.sh --connect command=:shutdown
+ExecReload=/opt/keycloak/bin/jboss-cli.sh --connect command=:reload
+TimeoutStartSec=600
+TimeoutStopSec=600
+
+[Install]
+WantedBy=multi-user.target
+EOF
+---------------------------
+
 Run keycloak as a CentOS 7 Service : https://www.pimwiddershoven.nl/entry/install-keycloak-on-centos-7-with-mysql-backend
 
 nginx proxy configuration for keycloak:
