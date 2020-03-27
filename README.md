@@ -1,4 +1,10 @@
 <pre><code>
+Export keysotre:
+openssl s_client -connect sonarqube-at.remote.server:443 | openssl x509 -out sonar_ssl.cert
+
+Import keystore:
+sudo keytool -import -alias assad.keycloak.com -file ~/Downloads/Untitled.crt -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/security/cacerts
+
 
 About keycloak user permission:
 
