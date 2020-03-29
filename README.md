@@ -1,5 +1,8 @@
 <pre><code>
 
+# generate ssl selfsign certificate
+openssl req -x509 -newkey rsa:4095 -keyout assad.keycloak.com.key -out assad.keycloak.com.pem -days 365
+
 Installed JDK location in CentOS 7
 readlink -f $(which java)
 or
