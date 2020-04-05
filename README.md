@@ -13,13 +13,14 @@ openssl s_client -connect sonarqube-at.remote.server:443 | openssl x509 -out son
 
 Import keystore:
 sudo keytool -import -alias assad.keycloak.com -file ~/Downloads/Untitled.crt -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/security/cacerts
+</code></pre>
 
-
-About keycloak user permission:
+# About keycloak user permission:
 
 https://osc.github.io/ood-documentation/master/authentication/tutorial-oidc-keycloak-rhel7/install-keycloak.html
-Above line content save in googlesheet a2z.ice help/Keycloak Installation wiht nginx and keycloak user permission
 
+Above line content save in googlesheet a2z.ice help/Keycloak Installation wiht nginx and keycloak user permission
+<pre><code>
 Run as linux service:
 ---------------------------
 
@@ -43,11 +44,14 @@ TimeoutStopSec=600
 WantedBy=multi-user.target
 
 ---------------------------
+</code></pre>
 
-Run keycloak as a CentOS 7 Service : https://www.pimwiddershoven.nl/entry/install-keycloak-on-centos-7-with-mysql-backend
+# Run keycloak as a CentOS 7 Service : 
+https://www.pimwiddershoven.nl/entry/install-keycloak-on-centos-7-with-mysql-backend
 
-nginx proxy configuration for keycloak:
+# nginx proxy configuration for keycloak:
 
+<pre><code>
 ---------------------/etc/nginx/config.d/ssl.config-----------
 
 server {
