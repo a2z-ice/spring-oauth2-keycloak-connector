@@ -1,5 +1,7 @@
 <pre><code>
 
+# work on integration test
+
 # generate ssl selfsign certificate
 openssl req -x509 -newkey rsa:4095 -keyout assad.keycloak.com.key -out assad.keycloak.com.pem -days 365
 
