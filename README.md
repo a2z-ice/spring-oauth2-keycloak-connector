@@ -135,7 +135,7 @@ server {
 
 </code></pre>
 
------------------------keycloak/standalone/configuration/standalone.xml-------------
+# ------------- keycloak/standalone/configuration/standalone.xml-------------
 <pre><code>
 &lt;http-listener name="default" socket-binding="http" redirect-socket="https" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
 &lt;https-listener name="https" socket-binding="https" security-realm="ApplicationRealm" enable-http2="true" proxy-address-forwarding="true"/&gt; &lt;------Add proxy-address-forwarding="true"
