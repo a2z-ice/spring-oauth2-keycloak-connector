@@ -43,27 +43,7 @@ services:
       MYSQL_DATABASE: keycloak
       MYSQL_USER: keycloak
       MYSQL_PASSWORD: <pw>
-    network_mode: host
-Final directory setup
-This is how my final file and folder setup looks like.
 
-$ cd /srv/docker/keycloak/
-$ tree
-.
-├── config
-│   └── docker-compose.yml
-└── data
-    ├── certs
-    │   ├── tls.crt
-    │   └── tls.key
-    └── keycloak_db
-Start container
-Finally, I was able to start my software using docker-compose.
-
-$ cd /srv/docker/keycloak/config/
-$ sudo docker-compose up -d
-----------------------------------------------docker ssl end--------------------------
-</code></pre>
 
 <pre><code>
 
